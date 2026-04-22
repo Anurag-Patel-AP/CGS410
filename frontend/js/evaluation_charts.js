@@ -133,7 +133,7 @@
         const maxLen = Math.max(2, Math.min(d3.max(data, d => d.length) || 30, 60));
         const minLen = Math.max(1, d3.min(data, d => d.length) || 1);
 
-        const xScale = d3.scaleLog().domain([minLen, maxLen]).range([0, innerW]).clamp(true);
+        const xScale = d3.scaleLinear().domain([minLen, maxLen]).range([0, innerW]).clamp(true);
         const yScale = d3.scaleLinear().domain([0, 105]).range([innerH, 0]);
 
         const svg = d3.select('#lengthUasChart').append('svg')
