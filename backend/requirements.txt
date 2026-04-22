@@ -7,3 +7,6 @@ pydantic
 datasets<2.20
 conllu
 numpy
+pandas
+matplotlib
+seaborn
