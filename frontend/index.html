@@ -111,9 +111,9 @@
                     <div id="goldTreeSvg" class="svg-container" style="min-height:420px;"></div>
                 </div>
 
-                <!-- Model 1 Prediction -->
+                <!-- Model Prediction -->
                 <div class="tree-panel glass-panel" style="width:100%; box-sizing:border-box;">
-                    <h3>Model 1 &mdash; Specialist Average <span id="modelLangBadge" style="font-size:0.7em; opacity:0.6; margin-left:0.5rem;"></span></h3>
+                    <h3>Model &mdash; Specialist Average <span id="modelLangBadge" style="font-size:0.7em; opacity:0.6; margin-left:0.5rem;"></span></h3>
                     <div style="margin-bottom:1rem; text-align:center;">
                         <span class="tree-desc">UAS Score:</span>
                         <span id="uasScore" style="font-weight:bold; font-size:1.4em; color:var(--accent-light); margin-left:0.4rem;">—</span>
@@ -155,7 +155,7 @@
                 <h2>Research Findings &amp; Analysis</h2>
                 <div style="background:rgba(46,134,171,0.1); padding:1.2rem; border-left:4px solid var(--accent); border-radius:4px; margin-bottom:2rem; line-height:1.6;">
                     <p style="margin-top:0;"><strong>The Core Concept:</strong> Modern language models do not merely memorize statistical word frequencies; they learn deep structural hierarchies. By probing the self-attention weights inside BERT, we can extract Directed Acyclic Graphs that strongly correlate with traditional linguistic dependency trees.</p>
-                    <p style="margin-bottom:0;">For each Universal Dependency relation, we evaluate all <strong>144 attention heads</strong> (12 layers &times; 12 heads) individually to identify a <strong>"specialist" head</strong> that aligns most accurately with a specific syntactic relationship (e.g., adjectival modifiers). Model 1 evaluates this phenomena organically using these specialist heads, discovered purely from a <strong>70% training split</strong> of the corpus.</p>
+                    <p style="margin-bottom:0;">For each Universal Dependency relation, we evaluate all <strong>144 attention heads</strong> (12 layers &times; 12 heads) individually to identify a <strong>"specialist" head</strong> that aligns most accurately with a specific syntactic relationship (e.g., adjectival modifiers). The Model evaluates this phenomena organically using these specialist heads, discovered purely from a <strong>70% training split</strong> of the corpus.</p>
                 </div>
 
                 <!-- Specialist DataFrame -->
@@ -176,15 +176,9 @@
                     </table>
                 </div>
 
-                <!-- Bar Chart with language tabs -->
-                <h3 style="margin-top:2.5rem;">Specialist Head Accuracy by Language</h3>
-                <p style="color:rgba(255,255,255,0.8); line-height:1.5;">This chart details the parsing accuracy of individual syntax-specific heads. <strong>Accuracy</strong> is defined as the fraction of word-pairs for a given relation where the child token attends to its correct gold-standard parent with the highest probability mass, looking uniquely at the assigned specialist head.</p>
-                <div id="specialistChartContainer" style="margin-top:1rem; overflow-x:auto;">
-                    <div id="specialistChartLoading" style="text-align:center; padding:2rem; color:rgba(255,255,255,0.5);">Loading chart...</div>
-                </div>
-
                 <div class="stat-text" style="margin-top:1.5rem; background:rgba(255,255,255,0.03); padding:1rem; border-radius:6px;">
-                    <p style="margin-top:0;"><strong>Key Observation:</strong> Middle-to-higher layers (mostly layers 5-8) tend to dominate for structural relations like <code>amod</code>, <code>det</code>, and <code>case</code>, suggesting BERT builds generalized syntactic features in the middle of its progression. Conversely, weak structural ties like <code>punct</code> score consistently poorly, implying attention isn't structurally bound by punctuation.</p>
+                    <p style="margin-top:0;"><strong>Accuracy</strong> in the table is defined as the fraction of word-pairs for a given relation where the child token attends to its correct gold-standard parent with the highest probability mass, looking uniquely at the assigned specialist head.</p>
+                    <p><strong>Key Observation:</strong> Middle-to-higher layers (mostly layers 5-8) tend to dominate for structural relations like <code>amod</code>, <code>det</code>, and <code>case</code>, suggesting BERT builds generalized syntactic features in the middle of its progression. Conversely, weak structural ties like <code>punct</code> score consistently poorly, implying attention isn't structurally bound by punctuation.</p>
                     <p style="margin-bottom:0;">Rare relations making up less than 0.5% of total corpus word tokens were excluded to preserve statistical robustness.</p>
                 </div>
 
@@ -214,7 +208,7 @@
                 </div>
 
                 <!-- Chart: Average UAS per Language -->
-                <h3 style="margin-top:3.5rem;">Model 1 &mdash; Average UAS by Language (Held-Out Test Set)</h3>
+                <h3 style="margin-top:3.5rem;">Model &mdash; Average UAS by Language (Held-Out Test Set)</h3>
                 <p style="color:rgba(255,255,255,0.8); line-height:1.5;">To validate that our specialist heads weren't simply overfitting to the training set, we evaluate the <strong>Unlabeled Attachment Score (UAS)</strong> exclusively on the held-out 30% test split. The UAS represents the pure percentage of words attached to their correct syntactic parent, utilizing our derived zero-shot head averages.</p>
                 <div id="avgUasChart" style="margin-top:1rem;"></div>
 
@@ -246,7 +240,6 @@
 
     <script src="js/tree_v7.js?v=2"></script>
     <script src="js/app_v7.js?v=3"></script>
-    <script src="js/specialist_chart.js?v=2"></script>
     <script src="js/specialist_table.js?v=1"></script>
     <script src="js/evaluation_charts.js?v=1"></script>
     <script src="js/unique_heads.js"></script>

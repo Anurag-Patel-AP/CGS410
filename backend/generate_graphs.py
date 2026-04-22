@@ -65,47 +65,29 @@ def main():
         print(f"File not found: {results_path}")
         
     # ---------------------------------------------------------
-    # 2. Specialist Head Accuracy by Language
+    # 2. Average UAS by Language Chart
     # ---------------------------------------------------------
-    csv_path = os.path.join(backend_dir, "specialist_dataframe.csv")
-    if os.path.exists(csv_path):
-        print("Generating Specialist Head Accuracy Chart...")
-        df_csv = pd.read_csv(csv_path)
+    if os.path.exists(results_path):
+        print("Generating Average UAS Chart...")
+        # Re-use df from test_results.json loaded above
+        avg_overall = df.groupby('language')['uas'].mean().reset_index()
+        avg_overall['language_name'] = avg_overall['language'].map(LANG_LABELS)
         
-        # Melt dataframe to format suitable for searborn barplot
-        plot_data = []
-        for index, row in df_csv.iterrows():
-            rel = row['relation']
-            for lang in ['en', 'hi', 'ja', 'de']:
-                acc_col = f"{lang}_accuracy_%"
-                if pd.notna(row.get(acc_col)):
-                    plot_data.append({
-                        'Language': LANG_LABELS[lang],
-                        'Relation': rel,
-                        'Accuracy': row[acc_col] * 100 # Assuming fraction, if already % adjust
-                    })
-                    
-        df_plot = pd.DataFrame(plot_data)
+        plt.figure(figsize=(8, 6))
+        barplot = sns.barplot(data=avg_overall, x='language_name', y='uas', palette=[LANG_COLORS[l] for l in avg_overall['language']])
         
-        # Filter to top common relations to avoid overcrowded x-axis
-        top_rels = df_csv['relation'].head(15).tolist() # Just arbitrary sorting 
-        df_plot_filtered = df_plot[df_plot['Relation'].isin(top_rels)]
-        
-        plt.figure(figsize=(14, 7))
-        sns.barplot(data=df_plot_filtered, x='Relation', y='Accuracy', hue='Language', 
-                    palette=[LANG_COLORS[l] for l in ['en','hi','ja','de']])
-        
-        plt.title("Specialist Head Accuracy by Universal Dependency Relation", fontsize=14, pad=15)
-        plt.xlabel("UD Relation", fontsize=12)
-        plt.ylabel("Accuracy (%)", fontsize=12)
+        plt.title("Model Average UAS by Language", fontsize=14, pad=15)
+        plt.xlabel("Language", fontsize=12)
+        plt.ylabel("Average UAS (%)", fontsize=12)
         plt.ylim(0, 100)
-        plt.xticks(rotation=45, ha='right')
-        plt.legend(title="Language")
+        
+        # Add exact values on top of bars
+        for index, row in avg_overall.iterrows():
+            barplot.text(index, row['uas'] + 1, f"{row['uas']:.1f}%", color='black', ha="center", fontsize=11)
+            
         plt.tight_layout()
-        plt.savefig(os.path.join(output_dir, "specialist_accuracy.png"), dpi=300)
+        plt.savefig(os.path.join(output_dir, "avg_uas_by_lang.png"), dpi=300)
         plt.close()
-    else:
-        print(f"File not found: {csv_path}")
         
     print(f"Graphs successfully saved to: {output_dir}")
 
