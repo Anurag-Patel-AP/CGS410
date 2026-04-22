@@ -1,13 +1,5 @@
----
-title: BERT Dependency Parser
-emoji: 🧠
-colorFrom: blue
-colorTo: purple
-sdk: docker
-pinned: false
-app_port: 7860
----
-# BERT Attention to Dependency Parsing Web App
+
+# BERT Attention to Dependency Website
 
 This project converts an exploratory notebook that extracts BERT attention to reconstruct syntactic dependency parsing paths into a robust, high-performance web application. Built with FastAPI for backend agility and Vanilla Javascript + D3.js + Glassmorphism aesthetics for modern presentation.
 
