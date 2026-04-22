@@ -74,7 +74,14 @@ def main():
         avg_overall['language_name'] = avg_overall['language'].map(LANG_LABELS)
         
         plt.figure(figsize=(8, 6))
-        barplot = sns.barplot(data=avg_overall, x='language_name', y='uas', palette=[LANG_COLORS[l] for l in avg_overall['language']])
+        barplot = sns.barplot(
+            data=avg_overall, 
+            x='language_name', 
+            y='uas', 
+            hue='language_name',
+            legend=False,
+            palette=[LANG_COLORS[l] for l in avg_overall['language']]
+        )
         
         plt.title("Model Average UAS by Language", fontsize=14, pad=15)
         plt.xlabel("Language", fontsize=12)
