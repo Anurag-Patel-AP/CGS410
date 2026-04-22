@@ -1,3 +1,11 @@
+"""
+Transformer Model Singleton Loader.
+===================================
+
+Provides a globally accessible singleton manager for Hugging Face pretrained models
+and tokenizers. Prevents reloading massive multi-lingual transformer layers multiple 
+times during web API requests, drastically improving latency.
+"""
 from transformers import AutoTokenizer, AutoModel
 
 class ModelLoader:

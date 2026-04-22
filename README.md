@@ -87,15 +87,6 @@ graph TD
     end
 ```
 
-## Deployment Guide (HuggingFace Spaces)
-
-Because large Transformer models like `bert-base-multilingual-cased` require ~700MB of RAM to load, we deploy for free using **Hugging Face Spaces**, which provides **16 GB of RAM** entirely for free!
-
-1. Go to [Hugging Face Spaces](https://huggingface.co/spaces) and create a new Space.
-2. Under "Select the Space SDK", choose **Docker**, then choose **Blank**.
-3. Push this repository's codebase directly to the Hugging Face Space repository using standard Git commands provided by HF.
-4. Hugging Face will automatically detect the provided `Dockerfile`, download the models, install requirements, and spin up the FastAPI webserver on port `7860`. You will get a permanent public URL instantly!
-
 ### Code Structure
 - `/backend`: Hosts `main.py` routing, `model_loader.py` for optimal transformers initialization, `data_loader.py` to stream JSON pool, and `nlp_utils.py` containing Chu-Liu/Edmonds.
 - `/frontend`: Responsive glassmorphic layout, using `tree.js` wrapped around D3.js to bring tree-visualization inline.

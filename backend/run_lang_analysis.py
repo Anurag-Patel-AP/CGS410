@@ -1,3 +1,13 @@
+"""
+Specialist Head Profiling Engine.
+=================================
+
+Automated discovery pipeline script. Evaluates every single attention head across 
+all layers on the 70% UD training splits. Computes classification accuracy against
+the gold-standard Universal Dependencies attachments to identify the mathematically 
+optimal "Specialist Head" for every core relationship per language.
+Outputs profiling data to unique JSONs.
+"""
 import json
 import os
 import sys

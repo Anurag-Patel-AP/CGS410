@@ -1,3 +1,12 @@
+"""
+Zero-Shot Model Evaluation Suite.
+=================================
+
+Automated evaluation pipeline script. Benchmarks the derived specialist attention 
+heads against the held-out 30% Unlabeled Dependency testing dataset splits.
+It reconstructs Maximum Spanning Arborescences on completely unseen sentences and 
+generates the 'test_results.json' file driving the frontend dashboard charts.
+"""
 import json
 import os
 import sys

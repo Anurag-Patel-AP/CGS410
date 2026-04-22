@@ -1,3 +1,12 @@
+"""
+Main FastAPI Application Engine.
+================================
+
+This module acts as the core backend router for the BERT Dependency Analyzer.
+It spins up the Uvicorn webserver, loads the pre-computed specialist ML state, 
+initializes the BERT models via the lifespan generator, and serves both the 
+REST API endpoints as well as the static frontend HTML.
+"""
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware

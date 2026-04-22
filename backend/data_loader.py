@@ -1,3 +1,11 @@
+"""
+Universal Dependencies JSON Loader.
+===================================
+
+Responsible for seamlessly streaming and parsing the Universal Dependencies (UD)
+treebank corpora splits (.json). Keeps subsets optimally loaded in memory to handle 
+fast frontend selection events.
+"""
 import json
 import os
 

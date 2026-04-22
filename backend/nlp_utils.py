@@ -1,3 +1,14 @@
+"""
+NLP Utilities and Core Machine Learning Algorithms.
+===================================================
+
+This module implements the heavyweight computational mathematics for extracting 
+grammar from neural attention. It features:
+  - matrix_and_pool: Averages multi-subword token attentions to word-level matrices.
+  - extract_mst_dict: Executes the Chu-Liu/Edmonds algorithm using NetworkX 
+    to extract maximum spanning arborescences (Directed Acyclic Graphs).
+  - compute_uas: Grades empirical Unlabeled Attachment Scores automatically.
+"""
 import torch
 import numpy as np
 import networkx as nx
