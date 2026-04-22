@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+transformers
+torch
+networkx
+pydantic
+datasets<2.20
+conllu
+numpy

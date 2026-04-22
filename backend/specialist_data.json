@@ -1,0 +1,184 @@
+[
+  {
+    "rel": "det",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 91.5,
+    "support": 27338
+  },
+  {
+    "rel": "amod",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 86.0,
+    "support": 19714
+  },
+  {
+    "rel": "case",
+    "layer": 6,
+    "head": 2,
+    "accuracy": 85.3,
+    "support": 82950
+  },
+  {
+    "rel": "fixed",
+    "layer": 4,
+    "head": 10,
+    "accuracy": 83.5,
+    "support": 1897
+  },
+  {
+    "rel": "flat",
+    "layer": 5,
+    "head": 4,
+    "accuracy": 81.3,
+    "support": 4446
+  },
+  {
+    "rel": "cop",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 80.4,
+    "support": 7172
+  },
+  {
+    "rel": "aux",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 76.1,
+    "support": 32549
+  },
+  {
+    "rel": "nummod",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 75.6,
+    "support": 9264
+  },
+  {
+    "rel": "compound",
+    "layer": 4,
+    "head": 8,
+    "accuracy": 74.4,
+    "support": 40979
+  },
+  {
+    "rel": "dep",
+    "layer": 5,
+    "head": 4,
+    "accuracy": 65.8,
+    "support": 2726
+  },
+  {
+    "rel": "xcomp",
+    "layer": 5,
+    "head": 6,
+    "accuracy": 60.4,
+    "support": 2347
+  },
+  {
+    "rel": "cc",
+    "layer": 6,
+    "head": 3,
+    "accuracy": 57.9,
+    "support": 10495
+  },
+  {
+    "rel": "conj",
+    "layer": 8,
+    "head": 5,
+    "accuracy": 56.5,
+    "support": 12723
+  },
+  {
+    "rel": "advmod",
+    "layer": 1,
+    "head": 2,
+    "accuracy": 56.0,
+    "support": 15367
+  },
+  {
+    "rel": "mark",
+    "layer": 5,
+    "head": 4,
+    "accuracy": 54.7,
+    "support": 18090
+  },
+  {
+    "rel": "obj",
+    "layer": 7,
+    "head": 3,
+    "accuracy": 50.7,
+    "support": 21352
+  },
+  {
+    "rel": "appos",
+    "layer": 5,
+    "head": 4,
+    "accuracy": 48.3,
+    "support": 3822
+  },
+  {
+    "rel": "nmod",
+    "layer": 2,
+    "head": 1,
+    "accuracy": 46.2,
+    "support": 40424
+  },
+  {
+    "rel": "nsubj",
+    "layer": 7,
+    "head": 10,
+    "accuracy": 40.5,
+    "support": 33806
+  },
+  {
+    "rel": "acl",
+    "layer": 5,
+    "head": 4,
+    "accuracy": 37.5,
+    "support": 9057
+  },
+  {
+    "rel": "ccomp",
+    "layer": 4,
+    "head": 1,
+    "accuracy": 33.2,
+    "support": 1110
+  },
+  {
+    "rel": "iobj",
+    "layer": 3,
+    "head": 4,
+    "accuracy": 31.8,
+    "support": 1993
+  },
+  {
+    "rel": "punct",
+    "layer": 2,
+    "head": 2,
+    "accuracy": 28.8,
+    "support": 54634
+  },
+  {
+    "rel": "obl",
+    "layer": 3,
+    "head": 4,
+    "accuracy": 28.1,
+    "support": 37196
+  },
+  {
+    "rel": "advcl",
+    "layer": 5,
+    "head": 11,
+    "accuracy": 27.0,
+    "support": 9254
+  },
+  {
+    "rel": "parataxis",
+    "layer": 3,
+    "head": 0,
+    "accuracy": 24.2,
+    "support": 579
+  }
+]

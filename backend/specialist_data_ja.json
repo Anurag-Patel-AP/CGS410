@@ -1,0 +1,107 @@
+[
+  {
+    "rel": "case",
+    "layer": 2,
+    "head": 7,
+    "accuracy": 85.7,
+    "support": 25183
+  },
+  {
+    "rel": "fixed",
+    "layer": 4,
+    "head": 10,
+    "accuracy": 83.5,
+    "support": 1897
+  },
+  {
+    "rel": "cop",
+    "layer": 5,
+    "head": 4,
+    "accuracy": 79.3,
+    "support": 1564
+  },
+  {
+    "rel": "obj",
+    "layer": 8,
+    "head": 3,
+    "accuracy": 66.7,
+    "support": 3162
+  },
+  {
+    "rel": "compound",
+    "layer": 4,
+    "head": 4,
+    "accuracy": 65.2,
+    "support": 15316
+  },
+  {
+    "rel": "mark",
+    "layer": 5,
+    "head": 4,
+    "accuracy": 65.0,
+    "support": 4778
+  },
+  {
+    "rel": "aux",
+    "layer": 2,
+    "head": 2,
+    "accuracy": 64.1,
+    "support": 13255
+  },
+  {
+    "rel": "nummod",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 55.6,
+    "support": 3196
+  },
+  {
+    "rel": "advmod",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 47.4,
+    "support": 1019
+  },
+  {
+    "rel": "nmod",
+    "layer": 2,
+    "head": 1,
+    "accuracy": 41.5,
+    "support": 7909
+  },
+  {
+    "rel": "nsubj",
+    "layer": 5,
+    "head": 2,
+    "accuracy": 39.0,
+    "support": 4595
+  },
+  {
+    "rel": "punct",
+    "layer": 2,
+    "head": 2,
+    "accuracy": 38.4,
+    "support": 11722
+  },
+  {
+    "rel": "acl",
+    "layer": 6,
+    "head": 3,
+    "accuracy": 34.6,
+    "support": 4201
+  },
+  {
+    "rel": "obl",
+    "layer": 5,
+    "head": 2,
+    "accuracy": 34.2,
+    "support": 8201
+  },
+  {
+    "rel": "advcl",
+    "layer": 8,
+    "head": 11,
+    "accuracy": 23.3,
+    "support": 4286
+  }
+]

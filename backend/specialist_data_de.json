@@ -1,0 +1,156 @@
+[
+  {
+    "rel": "compound",
+    "layer": 4,
+    "head": 8,
+    "accuracy": 95.0,
+    "support": 657
+  },
+  {
+    "rel": "det",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 91.7,
+    "support": 14528
+  },
+  {
+    "rel": "nummod",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 91.0,
+    "support": 1248
+  },
+  {
+    "rel": "amod",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 90.9,
+    "support": 6859
+  },
+  {
+    "rel": "aux",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 86.2,
+    "support": 2861
+  },
+  {
+    "rel": "case",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 82.2,
+    "support": 10960
+  },
+  {
+    "rel": "flat",
+    "layer": 5,
+    "head": 4,
+    "accuracy": 80.0,
+    "support": 3323
+  },
+  {
+    "rel": "cop",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 79.6,
+    "support": 1876
+  },
+  {
+    "rel": "cc",
+    "layer": 6,
+    "head": 3,
+    "accuracy": 64.7,
+    "support": 3763
+  },
+  {
+    "rel": "mark",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 64.1,
+    "support": 1435
+  },
+  {
+    "rel": "conj",
+    "layer": 8,
+    "head": 5,
+    "accuracy": 56.7,
+    "support": 5049
+  },
+  {
+    "rel": "obj",
+    "layer": 8,
+    "head": 3,
+    "accuracy": 55.8,
+    "support": 3761
+  },
+  {
+    "rel": "advmod",
+    "layer": 6,
+    "head": 8,
+    "accuracy": 54.7,
+    "support": 7798
+  },
+  {
+    "rel": "iobj",
+    "layer": 3,
+    "head": 4,
+    "accuracy": 51.7,
+    "support": 632
+  },
+  {
+    "rel": "appos",
+    "layer": 5,
+    "head": 4,
+    "accuracy": 50.9,
+    "support": 2638
+  },
+  {
+    "rel": "xcomp",
+    "layer": 3,
+    "head": 4,
+    "accuracy": 49.9,
+    "support": 882
+  },
+  {
+    "rel": "nsubj",
+    "layer": 3,
+    "head": 4,
+    "accuracy": 43.9,
+    "support": 9042
+  },
+  {
+    "rel": "obl",
+    "layer": 3,
+    "head": 4,
+    "accuracy": 39.7,
+    "support": 6529
+  },
+  {
+    "rel": "nmod",
+    "layer": 3,
+    "head": 4,
+    "accuracy": 36.5,
+    "support": 8061
+  },
+  {
+    "rel": "acl",
+    "layer": 7,
+    "head": 1,
+    "accuracy": 27.9,
+    "support": 1131
+  },
+  {
+    "rel": "advcl",
+    "layer": 4,
+    "head": 1,
+    "accuracy": 27.3,
+    "support": 608
+  },
+  {
+    "rel": "punct",
+    "layer": 5,
+    "head": 8,
+    "accuracy": 26.3,
+    "support": 16397
+  }
+]
