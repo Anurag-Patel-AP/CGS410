@@ -109,6 +109,14 @@ def get_evaluation():
     with open(path) as f:
         return json.load(f)
 
+@app.get("/api/lmm_evaluation")
+def get_lmm_evaluation():
+    path = os.path.join(os.path.dirname(__file__), "lmm_results.json")
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="LMM results not computed yet. Run run_lmm_analysis.py first.")
+    with open(path) as f:
+        return json.load(f)
+
 @app.get("/api/specialists/{lang}")
 def get_specialists_lang(lang: str):
     valid = {"en", "hi", "ja", "de", "all"}

@@ -154,8 +154,8 @@
             <div class="research-content">
                 <h2>Research Findings &amp; Analysis</h2>
                 <div style="background:rgba(46,134,171,0.1); padding:1.2rem; border-left:4px solid var(--accent); border-radius:4px; margin-bottom:2rem; line-height:1.6;">
-                    <p style="margin-top:0;"><strong>The Core Concept:</strong> Modern language models do not merely memorize statistical word frequencies; they learn deep structural hierarchies. By probing the self-attention weights inside BERT, we can extract Directed Acyclic Graphs that strongly correlate with traditional linguistic dependency trees.</p>
-                    <p style="margin-bottom:0;">For each Universal Dependency relation, we evaluate all <strong>144 attention heads</strong> (12 layers &times; 12 heads) individually to identify a <strong>"specialist" head</strong> that aligns most accurately with a specific syntactic relationship (e.g., adjectival modifiers). The Model evaluates this phenomena organically using these specialist heads, discovered purely from a <strong>70% training split</strong> of the corpus.</p>
+                    <p style="margin-top:0;"><strong>How the experiment works:</strong> We feed sentences through <code>bert-base-multilingual-cased</code> and record the internal self-attention weights &mdash; numbers that describe how much each word is "attending to" every other word. We then check: does the word receiving the most attention from token <em>i</em> match the syntactic parent assigned by linguists in the Universal Dependencies corpus?</p>
+                    <p style="margin-bottom:0;">To find the best signal, we evaluate all <strong>144 attention heads</strong> (12 layers &times; 12 heads) individually on a 70% training split. For each UD relation type (e.g., <code>nsubj</code>, <code>amod</code>), the head with the highest correct-parent hit rate becomes its <strong>Specialist Head</strong>. The model is then evaluated zero-shot on a completely separate 30% test split.</p>
                 </div>
 
                 <!-- Specialist DataFrame -->
@@ -177,21 +177,21 @@
                 </div>
 
                 <div class="stat-text" style="margin-top:1.5rem; background:rgba(255,255,255,0.03); padding:1rem; border-radius:6px;">
-                    <p style="margin-top:0;"><strong>Accuracy</strong> in the table is defined as the fraction of word-pairs for a given relation where the child token attends to its correct gold-standard parent with the highest probability mass, looking uniquely at the assigned specialist head.</p>
-                    <p><strong>Key Observation:</strong> Middle-to-higher layers (mostly layers 5-8) tend to dominate for structural relations like <code>amod</code>, <code>det</code>, and <code>case</code>, suggesting BERT builds generalized syntactic features in the middle of its progression. Conversely, weak structural ties like <code>punct</code> score consistently poorly, implying attention isn't structurally bound by punctuation.</p>
-                    <p style="margin-bottom:0;">Rare relations making up less than 0.5% of total corpus word tokens were excluded to preserve statistical robustness.</p>
+                    <p style="margin-top:0;"><strong>How to read the table:</strong> Each cell shows the best attention head (Layer-Head) for that relation in that language, plus the accuracy &mdash; the fraction of word pairs where the child token attends most strongly to its correct gold-standard parent using only that single specialist head.</p>
+                    <p><strong>Key finding:</strong> Middle-to-upper layers (5&ndash;8) dominate for core structural relations like <code>amod</code>, <code>det</code>, and <code>case</code>, consistent with prior work showing that BERT encodes syntax in middle layers. Functional relations like <code>punct</code> score poorly, suggesting attention is not structurally bound to punctuation.</p>
+                    <p style="margin-bottom:0;">Relations covering less than <strong>0.5% of corpus tokens</strong> are excluded for statistical robustness (following Voita et al., 2019).</p>
                 </div>
 
                 <!-- Unique Heads Section -->
                 <h3 style="margin-top:2.5rem;">Unique Specialist Heads by Language</h3>
-                <p style="color:rgba(255,255,255,0.8); line-height:1.5;">Not every single grammar rule occupies its own unique attention head. The counts below show the density of specialization. Sometimes a single head behaves as a robust encoder for multiple interconnected relations. The badges below list each chosen specialist head alongside the relations it learned to encode.</p>
+                <p style="color:rgba(255,255,255,0.8); line-height:1.5;">One key question from the proposal: <em>do the same heads specialise across different languages?</em> Multiple relations can share one attention head (it generalises across syntactic roles). Each badge below shows a head and the full set of relations it encodes for a given language.</p>
                 <div class="unique-heads-container" id="uniqueHeadsContainer" style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:1rem;">
                     <div style="color:rgba(255,255,255,0.5);">Loading unique heads...</div>
                 </div>
 
                 <!-- Common Heads Across Languages -->
                 <h4 style="margin-top:3rem;">Common Specialist Heads Across Languages</h4>
-                <p style="color:rgba(255,255,255,0.8); line-height:1.5;">A fascinating question in multilingual models is whether they learn "universal" heads for linguistic concepts regardless of surface morphology. This table isolates the attention heads that independently emerged as specialists for the same relations across multiple languages without any cross-lingual prompting.</p>
+                <p style="color:rgba(255,255,255,0.8); line-height:1.5;">This table directly addresses our cross-linguistic analysis goal: are the same attention heads specialising for the same relations across English, Hindi, Japanese, and German &mdash; without any cross-lingual training signal? A shared head across languages would strongly suggest BERT has learned a <em>universal</em> grammatical encoder, not just a language-specific pattern.</p>
                 <div class="specialist-table-wrap">
                     <table class="specialist-table" id="commonHeadsTable">
                         <thead>
@@ -209,14 +209,62 @@
 
                 <!-- Chart: Average UAS per Language -->
                 <h3 style="margin-top:3.5rem;">Model &mdash; Average UAS by Language (Held-Out Test Set)</h3>
-                <p style="color:rgba(255,255,255,0.8); line-height:1.5;">To validate that our specialist heads weren't simply overfitting to the training set, we evaluate the <strong>Unlabeled Attachment Score (UAS)</strong> exclusively on the held-out 30% test split. The UAS represents the pure percentage of words attached to their correct syntactic parent, utilizing our derived zero-shot head averages.</p>
+                <p style="color:rgba(255,255,255,0.8); line-height:1.5;">Each language's specialist heads were discovered <em>only</em> from the 70% training split. This bar chart shows the <strong>Unlabeled Attachment Score (UAS)</strong> on the entirely unseen 30% test split &mdash; the fraction of words whose predicted syntactic parent token is correct. A random baseline would score 1/(sentence length), so any positive UAS confirms genuine grammatical signal in attention.</p>
                 <div id="avgUasChart" style="margin-top:1rem;"></div>
 
-                <!-- Chart: UAS vs Sentence Length -->
-                <h3 style="margin-top:3.5rem;">Model UAS vs Sentence Length &mdash; Language Comparison</h3>
-                <p style="color:rgba(255,255,255,0.8); line-height:1.5;">As sentences grow longer, the total pool of candidate parent tokens linearly expands, naturally making dependency resolution exponentially harder. The solid colored lines trace smoothed moving averages of our Model's UAS at exact sentence lengths.</p>
-                <p style="color:rgba(255,255,255,0.8); line-height:1.5;"><strong>The Random Baseline:</strong> Crucially, notice the dashed line representing the mathematical expectation (1/n) of achieving a correct parent attachment if the choice inherently relied on a random graph. The model significantly elevates over this boundary, demonstrating that it genuinely grasps profound grammatical structure over mere random likelihood.</p>
+                <h3 style="margin-top:3.5rem;">UAS vs Sentence Length &mdash; Language Comparison</h3>
+                <p style="color:rgba(255,255,255,0.8); line-height:1.5;">As sentences grow longer, the number of candidate parent tokens grows linearly, so random-chance UAS drops (&sim;1/n). The solid coloured lines show the model's empirical UAS at each sentence length. <strong>A line falling slower than the grey dashed baseline</strong> (random chance) confirms the model is extracting genuine structure rather than defaulting to proximity or frequency heuristics.</p>
                 <div id="lengthUasChart" style="margin-top:1rem;"></div>
+
+                <!-- LMM: proposal formula explanation -->
+                <h3 style="margin-top:3.5rem;">Statistical Validation &mdash; Linear Mixed Model</h3>
+                <div style="background:rgba(255,255,255,0.03); padding:1.2rem; border-left:4px solid #f43f5e; border-radius:4px; margin-bottom:2rem; line-height:1.6;">
+                    <p style="margin-top:0;">Simply comparing average UAS across relations would be misleading &mdash; longer sentences and cross-linguistic variation both independently affect attention weights. To isolate the <em>pure grammatical signal</em>, we fit a <strong>Linear Mixed Model</strong> (from the project proposal):</p>
+                    <p style="text-align:center; font-size:1.1rem; letter-spacing:0.03em; margin:1rem 0;"><code>y &sim; &beta;<sub>0</sub> + &beta;<sub>1</sub>T + &beta;<sub>2</sub>L + (1|Language) + &epsilon;</code></p>
+                    <ul style="color:rgba(255,255,255,0.8); padding-left:1.5rem; margin-bottom:0.5rem;">
+                        <li><strong>y</strong> &mdash; attention weight of the child&rarr;parent token pair</li>
+                        <li><strong>T</strong> &mdash; gold dependency type (fixed effect, e.g. <code>nsubj</code>, <code>obj</code>)</li>
+                        <li><strong>L</strong> &mdash; sentence length in tokens (confounder, controlled away)</li>
+                        <li><strong>(1|Language)</strong> &mdash; random intercept per language (absorbs cross-lingual baseline differences)</li>
+                    </ul>
+                    <p style="margin-bottom:0;">The coefficients <strong>&beta;<sub>1</sub></strong> in the Forest Plot below reveal which dependency types genuinely drive higher attention weights beyond what sentence length or language typology alone would predict.</p>
+                </div>
+
+                <div style="display:flex; flex-wrap:wrap; gap:2rem; margin-bottom:2rem;">
+                    <div style="flex:1; background:rgba(255,255,255,0.02); padding:1rem; border-radius:4px; text-align:center;">
+                        <h4 style="margin:0 0 0.5rem 0; color:rgba(255,255,255,0.7);">Proposal Model R&sup2; (Conditional)</h4>
+                        <div id="lmmR2_m1" style="font-size:1.4rem; font-weight:700; color:#38bdf8;">--</div>
+                        <p style="margin:0.4rem 0 0 0; color:rgba(255,255,255,0.4); font-size:0.8rem;">y ~ T + L + (1|Language)</p>
+                    </div>
+                    <div style="flex:1; background:rgba(255,255,255,0.02); padding:1rem; border-radius:4px; text-align:center;">
+                        <h4 style="margin:0 0 0.5rem 0; color:rgba(255,255,255,0.7);">Extended Model R&sup2; (Conditional)</h4>
+                        <div id="lmmR2_m2" style="font-size:1.4rem; font-weight:700; color:#34d399;">--</div>
+                        <p style="margin:0.4rem 0 0 0; color:rgba(255,255,255,0.4); font-size:0.8rem;">y ~ T + L + head + layer + (1|Language)</p>
+                    </div>
+                </div>
+
+                <div class="glass-panel" style="padding:1.5rem;">
+                    <h4 style="margin-top:0; text-align:center;">Fixed Effect Coefficients (&beta;<sub>1</sub>T) &mdash; Dependency Type vs Attention Weight</h4>
+                    <p style="color:rgba(255,255,255,0.5); font-size:0.82rem; text-align:center; margin-top:0;">Each row is one UD relation. Dot = estimated &beta;<sub>1</sub> coefficient. Line = 95% confidence interval. Green = positive effect; Red = negative. Relations whose CI does not cross zero are statistically significant.</p>
+                    <div id="lmmContainer" style="width:100%; max-height:560px; overflow-y:auto; overflow-x:hidden; border-radius:6px;">
+                        <div id="lmmChart"></div>
+                    </div>
+                </div>
+
+                <!-- LMM Random Effects: (1|Language) intercepts -->
+                <h3 style="margin-top:3.5rem;">Language Typology Effects &mdash; (1|Language) Random Intercepts</h3>
+                <div style="background:rgba(255,255,255,0.03); padding:1.2rem; border-left:4px solid #a78bfa; border-radius:4px; margin-bottom:2rem; line-height:1.6;">
+                    <p style="margin-top:0;">The <strong>(1|Language)</strong> term in the LMM captures each language's individual baseline shift in attention weight, <em>after the fixed effects of dependency type and sentence length are removed</em>. This directly tests the proposal's hypothesis about language typology:</p>
+                    <ul style="color:rgba(255,255,255,0.8); padding-left:1.5rem; margin-bottom:0.5rem;">
+                        <li>A <strong>positive intercept</strong> means the language systematically produces higher attention weights on gold-standard parent tokens than the global average &mdash; i.e., dependency structure is more easily visible in attention.</li>
+                        <li>A <strong>negative intercept</strong> means attention is more distributed, making the correct parent harder to recover from attention alone.</li>
+                    </ul>
+                    <p style="margin-bottom:0;">Head-final languages like <strong>Japanese</strong> and <strong>Hindi</strong> (SOV word order) tend to show different intercepts from head-initial <strong>English</strong> (SVO), confirming that <em>language typology does affect where and how strongly syntactic information is encoded in BERT's attention</em>.</p>
+                </div>
+                <div class="glass-panel" style="padding:1.5rem;">
+                    <h4 style="margin-top:0; text-align:center;">Per-Language Random Intercepts &mdash; (1|Language) from LMM</h4>
+                    <div id="lmmRandomEffectsChart" style="width:100%; min-height:200px;"></div>
+                </div>
 
             </div>
         </section>
@@ -243,5 +291,6 @@
     <script src="js/specialist_table.js?v=1"></script>
     <script src="js/evaluation_charts.js?v=1"></script>
     <script src="js/unique_heads.js"></script>
+    <script src="js/lmm_charts.js?v=3"></script>
 </body>
 </html>

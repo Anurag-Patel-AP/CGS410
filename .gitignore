@@ -1,0 +1,22 @@
+# Python cache — never commit
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+.env/
+env/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Jupyter notebooks (original analysis notebooks moved to Add/, now deleted)
+*.ipynb
+
+# Large raw CSV data files — regen from extract_ud_data.py
+backend/data/Word.csv
+backend/data/Sentence.csv
