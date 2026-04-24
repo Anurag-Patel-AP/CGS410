@@ -85,10 +85,12 @@ Website/
 │   ├── run_lang_analysis.py       # Step 2: Discover specialist heads per language
 │   ├── run_evaluation.py          # Step 3: Benchmark on held-out test set
 │   ├── run_lmm_analysis.py        # Step 4: Fit LMM, export coefficients & graphs
+│   ├── generate_heatmaps.py       # Step 5: Average attention matrices per relation
 │   ├── generate_graphs.py         # Optional: Regenerate UAS graphs from test_results.json
 │   ├── specialist_data*.json      # Pre-computed specialist head assignments
 │   ├── test_results.json          # Pre-computed evaluation results
 │   ├── lmm_results.json           # Pre-computed LMM coefficients & random effects
+│   ├── relation_heatmaps.json     # Pre-computed 12x12 heatmaps array
 │   └── requirements.txt
 ├── frontend/
 │   ├── index.html                 # Single-page research app
@@ -164,7 +166,14 @@ This single command:
 > python backend/generate_graphs.py
 > ```
 
-### 6. Start the Web Server
+### 6. Run Heatmap Generation
+Calculates average 12x12 attention matrices across all available training sentences for visually robust specialist matrices:
+```bash
+python backend/generate_heatmaps.py
+```
+*Outputs `backend/data/relation_heatmaps.json` (takes ~15-30 minutes).*
+
+### 7. Start the Web Server
 ```bash
 python -m uvicorn backend.main:app --reload
 ```

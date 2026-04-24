@@ -129,6 +129,19 @@ def get_specialists_lang(lang: str):
     with open(path) as f:
         return json.load(f)
 
+@app.get("/api/heatmaps")
+def get_heatmaps():
+    path = os.path.join(os.path.dirname(__file__), "data", "relation_heatmaps.json")
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="Heatmaps not computed yet. Run generate_heatmaps.py first.")
+    with open(path) as f:
+        return json.load(f)
+
+# Serve backend graphs (must be mounted BEFORE the root "/" catch-all)
+graphs_dir = os.path.join(os.path.dirname(__file__), "graphs")
+if os.path.exists(graphs_dir):
+    app.mount("/graphs", StaticFiles(directory=graphs_dir), name="graphs")
+
 # Serve frontend
 frontend_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
 if os.path.exists(frontend_dir):

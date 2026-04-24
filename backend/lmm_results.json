@@ -1002,5 +1002,1311 @@
       "language": "Hindi",
       "intercept": -0.087653
     }
-  ]
+  ],
+  "model1_en": {
+    "coefficients": [
+      {
+        "name": "Intercept",
+        "display_name": "Intercept",
+        "coef": 0.531,
+        "pvalue": 2.8254681602217434e-151,
+        "se": 0.0201,
+        "ci_low": 0.4916,
+        "ci_high": 0.5704
+      },
+      {
+        "name": "C(relation)[T.fixed]",
+        "display_name": "fixed",
+        "coef": 0.4666,
+        "pvalue": 4.709573983597657e-29,
+        "se": 0.0416,
+        "ci_low": 0.385,
+        "ci_high": 0.5482
+      },
+      {
+        "name": "C(relation)[T.compound:prt]",
+        "display_name": "compound:prt",
+        "coef": 0.3632,
+        "pvalue": 1.3938864127994542e-22,
+        "se": 0.0371,
+        "ci_low": 0.2904,
+        "ci_high": 0.4359
+      },
+      {
+        "name": "C(relation)[T.expl]",
+        "display_name": "expl",
+        "coef": 0.3349,
+        "pvalue": 1.904669037174345e-19,
+        "se": 0.0371,
+        "ci_low": 0.2622,
+        "ci_high": 0.4076
+      },
+      {
+        "name": "C(relation)[T.det]",
+        "display_name": "det",
+        "coef": 0.3053,
+        "pvalue": 3.684020727747005e-49,
+        "se": 0.0207,
+        "ci_low": 0.2648,
+        "ci_high": 0.3458
+      },
+      {
+        "name": "C(relation)[T.aux:pass]",
+        "display_name": "aux:pass",
+        "coef": 0.2952,
+        "pvalue": 3.5305340278865276e-25,
+        "se": 0.0284,
+        "ci_low": 0.2394,
+        "ci_high": 0.3509
+      },
+      {
+        "name": "C(relation)[T.nummod]",
+        "display_name": "nummod",
+        "coef": 0.2906,
+        "pvalue": 5.304364824646984e-21,
+        "se": 0.0309,
+        "ci_low": 0.2301,
+        "ci_high": 0.3511
+      },
+      {
+        "name": "C(relation)[T.amod]",
+        "display_name": "amod",
+        "coef": 0.238,
+        "pvalue": 1.2068897547404303e-29,
+        "se": 0.021,
+        "ci_low": 0.1968,
+        "ci_high": 0.2792
+      },
+      {
+        "name": "C(relation)[T.compound]",
+        "display_name": "compound",
+        "coef": 0.2354,
+        "pvalue": 1.5354541911119347e-26,
+        "se": 0.0221,
+        "ci_low": 0.1922,
+        "ci_high": 0.2787
+      },
+      {
+        "name": "C(relation)[T.aux]",
+        "display_name": "aux",
+        "coef": 0.2106,
+        "pvalue": 1.8305226290968253e-20,
+        "se": 0.0227,
+        "ci_low": 0.1661,
+        "ci_high": 0.2551
+      },
+      {
+        "name": "C(relation)[T.cc:preconj]",
+        "display_name": "cc:preconj",
+        "coef": 0.2012,
+        "pvalue": 0.0460212780098321,
+        "se": 0.1008,
+        "ci_low": 0.0036,
+        "ci_high": 0.3988
+      },
+      {
+        "name": "C(relation)[T.det:predet]",
+        "display_name": "det:predet",
+        "coef": 0.1987,
+        "pvalue": 0.0019471287293918434,
+        "se": 0.0641,
+        "ci_low": 0.073,
+        "ci_high": 0.3244
+      },
+      {
+        "name": "C(relation)[T.case]",
+        "display_name": "case",
+        "coef": 0.197,
+        "pvalue": 7.423236618498883e-22,
+        "se": 0.0205,
+        "ci_low": 0.1568,
+        "ci_high": 0.2371
+      },
+      {
+        "name": "C(relation)[T.nmod:unmarked]",
+        "display_name": "nmod:unmarked",
+        "coef": 0.1688,
+        "pvalue": 4.896560382024405e-06,
+        "se": 0.0369,
+        "ci_low": 0.0964,
+        "ci_high": 0.2411
+      },
+      {
+        "name": "C(relation)[T.iobj]",
+        "display_name": "iobj",
+        "coef": 0.1425,
+        "pvalue": 0.0021963266995146755,
+        "se": 0.0465,
+        "ci_low": 0.0513,
+        "ci_high": 0.2336
+      },
+      {
+        "name": "C(relation)[T.flat]",
+        "display_name": "flat",
+        "coef": 0.1322,
+        "pvalue": 1.4601101451318912e-07,
+        "se": 0.0251,
+        "ci_low": 0.083,
+        "ci_high": 0.1815
+      },
+      {
+        "name": "C(relation)[T.advmod]",
+        "display_name": "advmod",
+        "coef": 0.1116,
+        "pvalue": 1.8452275539245136e-07,
+        "se": 0.0214,
+        "ci_low": 0.0697,
+        "ci_high": 0.1535
+      },
+      {
+        "name": "C(relation)[T.cop]",
+        "display_name": "cop",
+        "coef": 0.1037,
+        "pvalue": 2.018364641888292e-05,
+        "se": 0.0243,
+        "ci_low": 0.056,
+        "ci_high": 0.1513
+      },
+      {
+        "name": "C(relation)[T.nmod:poss]",
+        "display_name": "nmod:poss",
+        "coef": 0.0935,
+        "pvalue": 0.0001314488899129468,
+        "se": 0.0245,
+        "ci_low": 0.0456,
+        "ci_high": 0.1415
+      },
+      {
+        "name": "C(relation)[T.nmod:desc]",
+        "display_name": "nmod:desc",
+        "coef": 0.0724,
+        "pvalue": 0.04589721292947173,
+        "se": 0.0363,
+        "ci_low": 0.0013,
+        "ci_high": 0.1436
+      },
+      {
+        "name": "C(relation)[T.obj]",
+        "display_name": "obj",
+        "coef": 0.0724,
+        "pvalue": 0.000871422733647366,
+        "se": 0.0217,
+        "ci_low": 0.0298,
+        "ci_high": 0.115
+      },
+      {
+        "name": "C(relation)[T.cc]",
+        "display_name": "cc",
+        "coef": 0.0613,
+        "pvalue": 0.006287728275581909,
+        "se": 0.0224,
+        "ci_low": 0.0173,
+        "ci_high": 0.1053
+      },
+      {
+        "name": "C(relation)[T.mark]",
+        "display_name": "mark",
+        "coef": 0.06,
+        "pvalue": 0.007050140138784,
+        "se": 0.0223,
+        "ci_low": 0.0164,
+        "ci_high": 0.1037
+      },
+      {
+        "name": "C(relation)[T.obl:unmarked]",
+        "display_name": "obl:unmarked",
+        "coef": 0.0286,
+        "pvalue": 0.41093304265918007,
+        "se": 0.0348,
+        "ci_low": -0.0396,
+        "ci_high": 0.0967
+      },
+      {
+        "name": "C(relation)[T.xcomp]",
+        "display_name": "xcomp",
+        "coef": 0.0263,
+        "pvalue": 0.3050863474538664,
+        "se": 0.0256,
+        "ci_low": -0.0239,
+        "ci_high": 0.0764
+      },
+      {
+        "name": "C(relation)[T.nsubj]",
+        "display_name": "nsubj",
+        "coef": 0.0204,
+        "pvalue": 0.3305059683723762,
+        "se": 0.0209,
+        "ci_low": -0.0207,
+        "ci_high": 0.0614
+      },
+      {
+        "name": "sent_length",
+        "display_name": "sent_length",
+        "coef": -0.0005,
+        "pvalue": 1.5508640493008543e-05,
+        "se": 0.0001,
+        "ci_low": -0.0008,
+        "ci_high": -0.0003
+      },
+      {
+        "name": "C(relation)[T.orphan]",
+        "display_name": "orphan",
+        "coef": -0.0913,
+        "pvalue": 0.574618926851816,
+        "se": 0.1627,
+        "ci_low": -0.4102,
+        "ci_high": 0.2276
+      },
+      {
+        "name": "C(relation)[T.punct]",
+        "display_name": "punct",
+        "coef": -0.1025,
+        "pvalue": 5.097033386821169e-07,
+        "se": 0.0204,
+        "ci_low": -0.1425,
+        "ci_high": -0.0625
+      },
+      {
+        "name": "C(relation)[T.acl:relcl]",
+        "display_name": "acl:relcl",
+        "coef": -0.1464,
+        "pvalue": 1.0255804853722064e-07,
+        "se": 0.0275,
+        "ci_low": -0.2003,
+        "ci_high": -0.0925
+      },
+      {
+        "name": "C(relation)[T.conj]",
+        "display_name": "conj",
+        "coef": -0.1465,
+        "pvalue": 5.629788255808503e-11,
+        "se": 0.0223,
+        "ci_low": -0.1903,
+        "ci_high": -0.1027
+      },
+      {
+        "name": "C(relation)[T.nsubj:pass]",
+        "display_name": "nsubj:pass",
+        "coef": -0.1562,
+        "pvalue": 9.143946772684419e-08,
+        "se": 0.0292,
+        "ci_low": -0.2135,
+        "ci_high": -0.0989
+      },
+      {
+        "name": "C(relation)[T.nmod]",
+        "display_name": "nmod",
+        "coef": -0.1813,
+        "pvalue": 3.75645192885024e-17,
+        "se": 0.0215,
+        "ci_low": -0.2235,
+        "ci_high": -0.1392
+      },
+      {
+        "name": "C(relation)[T.appos]",
+        "display_name": "appos",
+        "coef": -0.1894,
+        "pvalue": 2.621974845674159e-09,
+        "se": 0.0318,
+        "ci_low": -0.2517,
+        "ci_high": -0.1271
+      },
+      {
+        "name": "C(relation)[T.discourse]",
+        "display_name": "discourse",
+        "coef": -0.1988,
+        "pvalue": 0.0005260281091257508,
+        "se": 0.0573,
+        "ci_low": -0.3112,
+        "ci_high": -0.0864
+      },
+      {
+        "name": "C(relation)[T.csubj]",
+        "display_name": "csubj",
+        "coef": -0.238,
+        "pvalue": 1.4906002080117546e-06,
+        "se": 0.0494,
+        "ci_low": -0.3349,
+        "ci_high": -0.1411
+      },
+      {
+        "name": "C(relation)[T.obl]",
+        "display_name": "obl",
+        "coef": -0.2625,
+        "pvalue": 4.0396082163718e-34,
+        "se": 0.0215,
+        "ci_low": -0.3046,
+        "ci_high": -0.2203
+      },
+      {
+        "name": "C(relation)[T.advcl:relcl]",
+        "display_name": "advcl:relcl",
+        "coef": -0.2662,
+        "pvalue": 0.0013604668533462232,
+        "se": 0.0831,
+        "ci_low": -0.4291,
+        "ci_high": -0.1033
+      },
+      {
+        "name": "C(relation)[T.ccomp]",
+        "display_name": "ccomp",
+        "coef": -0.2676,
+        "pvalue": 5.45904635776915e-24,
+        "se": 0.0265,
+        "ci_low": -0.3194,
+        "ci_high": -0.2157
+      },
+      {
+        "name": "C(relation)[T.reparandum]",
+        "display_name": "reparandum",
+        "coef": -0.2733,
+        "pvalue": 0.329625699918047,
+        "se": 0.2804,
+        "ci_low": -0.8229,
+        "ci_high": 0.2762
+      },
+      {
+        "name": "C(relation)[T.advcl]",
+        "display_name": "advcl",
+        "coef": -0.2791,
+        "pvalue": 2.3021217895387865e-29,
+        "se": 0.0248,
+        "ci_low": -0.3276,
+        "ci_high": -0.2305
+      },
+      {
+        "name": "C(relation)[T.csubj:outer]",
+        "display_name": "csubj:outer",
+        "coef": -0.2883,
+        "pvalue": 0.30393892545746426,
+        "se": 0.2804,
+        "ci_low": -0.8379,
+        "ci_high": 0.2613
+      },
+      {
+        "name": "C(relation)[T.obl:agent]",
+        "display_name": "obl:agent",
+        "coef": -0.3106,
+        "pvalue": 4.2558905025251366e-13,
+        "se": 0.0428,
+        "ci_low": -0.3945,
+        "ci_high": -0.2266
+      },
+      {
+        "name": "C(relation)[T.vocative]",
+        "display_name": "vocative",
+        "coef": -0.3361,
+        "pvalue": 0.0173568179778778,
+        "se": 0.1412,
+        "ci_low": -0.6129,
+        "ci_high": -0.0592
+      },
+      {
+        "name": "C(relation)[T.dislocated]",
+        "display_name": "dislocated",
+        "coef": -0.3517,
+        "pvalue": 0.0768116827977916,
+        "se": 0.1988,
+        "ci_low": -0.7413,
+        "ci_high": 0.0379
+      },
+      {
+        "name": "C(relation)[T.parataxis]",
+        "display_name": "parataxis",
+        "coef": -0.3562,
+        "pvalue": 2.1837792784294475e-23,
+        "se": 0.0357,
+        "ci_low": -0.4261,
+        "ci_high": -0.2862
+      },
+      {
+        "name": "C(relation)[T.csubj:pass]",
+        "display_name": "csubj:pass",
+        "coef": -0.3707,
+        "pvalue": 0.008670680428060436,
+        "se": 0.1412,
+        "ci_low": -0.6475,
+        "ci_high": -0.0939
+      },
+      {
+        "name": "C(relation)[T.list]",
+        "display_name": "list",
+        "coef": -0.3782,
+        "pvalue": 0.020103780916254678,
+        "se": 0.1627,
+        "ci_low": -0.6971,
+        "ci_high": -0.0593
+      },
+      {
+        "name": "C(relation)[T.nsubj:outer]",
+        "display_name": "nsubj:outer",
+        "coef": -0.3811,
+        "pvalue": 6.890397155185212e-08,
+        "se": 0.0706,
+        "ci_low": -0.5195,
+        "ci_high": -0.2426
+      }
+    ],
+    "r2_marginal": 0.294,
+    "r2_conditional": 0.2923,
+    "n_obs": 20857
+  },
+  "model1_hi": {
+    "coefficients": [
+      {
+        "name": "C(relation)[T.aux]",
+        "display_name": "aux",
+        "coef": 0.4275,
+        "pvalue": 1.4823434751807635e-74,
+        "se": 0.0233,
+        "ci_low": 0.3818,
+        "ci_high": 0.4731
+      },
+      {
+        "name": "C(relation)[T.det]",
+        "display_name": "det",
+        "coef": 0.2894,
+        "pvalue": 5.94417280613605e-34,
+        "se": 0.0238,
+        "ci_low": 0.2428,
+        "ci_high": 0.336
+      },
+      {
+        "name": "Intercept",
+        "display_name": "Intercept",
+        "coef": 0.2754,
+        "pvalue": 6.271678175815077e-39,
+        "se": 0.021,
+        "ci_low": 0.2341,
+        "ci_high": 0.3166
+      },
+      {
+        "name": "C(relation)[T.advmod]",
+        "display_name": "advmod",
+        "coef": 0.2659,
+        "pvalue": 2.7322241912458674e-21,
+        "se": 0.028,
+        "ci_low": 0.2109,
+        "ci_high": 0.3208
+      },
+      {
+        "name": "C(relation)[T.cop]",
+        "display_name": "cop",
+        "coef": 0.248,
+        "pvalue": 1.0021178786909673e-22,
+        "se": 0.0252,
+        "ci_low": 0.1985,
+        "ci_high": 0.2974
+      },
+      {
+        "name": "C(relation)[T.dep]",
+        "display_name": "dep",
+        "coef": 0.2468,
+        "pvalue": 3.769530782214138e-22,
+        "se": 0.0255,
+        "ci_low": 0.1969,
+        "ci_high": 0.2967
+      },
+      {
+        "name": "C(relation)[T.nummod]",
+        "display_name": "nummod",
+        "coef": 0.2447,
+        "pvalue": 1.4951292903554236e-21,
+        "se": 0.0256,
+        "ci_low": 0.1945,
+        "ci_high": 0.295
+      },
+      {
+        "name": "C(relation)[T.case]",
+        "display_name": "case",
+        "coef": 0.2414,
+        "pvalue": 1.8443723395728785e-30,
+        "se": 0.021,
+        "ci_low": 0.2002,
+        "ci_high": 0.2826
+      },
+      {
+        "name": "C(relation)[T.aux:pass]",
+        "display_name": "aux:pass",
+        "coef": 0.2032,
+        "pvalue": 2.7413226843125653e-18,
+        "se": 0.0233,
+        "ci_low": 0.1576,
+        "ci_high": 0.2488
+      },
+      {
+        "name": "C(relation)[T.compound]",
+        "display_name": "compound",
+        "coef": 0.1721,
+        "pvalue": 1.1381342775224179e-15,
+        "se": 0.0215,
+        "ci_low": 0.13,
+        "ci_high": 0.2142
+      },
+      {
+        "name": "C(relation)[T.xcomp]",
+        "display_name": "xcomp",
+        "coef": 0.1527,
+        "pvalue": 0.00011627247538405896,
+        "se": 0.0396,
+        "ci_low": 0.075,
+        "ci_high": 0.2303
+      },
+      {
+        "name": "C(relation)[T.mark]",
+        "display_name": "mark",
+        "coef": 0.1415,
+        "pvalue": 1.3225376721336888e-09,
+        "se": 0.0233,
+        "ci_low": 0.0958,
+        "ci_high": 0.1872
+      },
+      {
+        "name": "C(relation)[T.amod]",
+        "display_name": "amod",
+        "coef": 0.0922,
+        "pvalue": 3.623078875602419e-05,
+        "se": 0.0223,
+        "ci_low": 0.0484,
+        "ci_high": 0.1359
+      },
+      {
+        "name": "C(relation)[T.punct]",
+        "display_name": "punct",
+        "coef": 0.0288,
+        "pvalue": 0.1828454472697775,
+        "se": 0.0216,
+        "ci_low": -0.0136,
+        "ci_high": 0.0712
+      },
+      {
+        "name": "C(relation)[T.dislocated]",
+        "display_name": "dislocated",
+        "coef": 0.0088,
+        "pvalue": 0.929309343617988,
+        "se": 0.0997,
+        "ci_low": -0.1866,
+        "ci_high": 0.2043
+      },
+      {
+        "name": "C(relation)[T.cc]",
+        "display_name": "cc",
+        "coef": 0.0055,
+        "pvalue": 0.8225960305487339,
+        "se": 0.0247,
+        "ci_low": -0.0429,
+        "ci_high": 0.054
+      },
+      {
+        "name": "C(relation)[T.vocative]",
+        "display_name": "vocative",
+        "coef": 0.0033,
+        "pvalue": 0.989811292933708,
+        "se": 0.259,
+        "ci_low": -0.5043,
+        "ci_high": 0.5109
+      },
+      {
+        "name": "sent_length",
+        "display_name": "sent_length",
+        "coef": -0.0016,
+        "pvalue": 6.108022237791595e-15,
+        "se": 0.0002,
+        "ci_low": -0.002,
+        "ci_high": -0.0012
+      },
+      {
+        "name": "C(relation)[T.obj]",
+        "display_name": "obj",
+        "coef": -0.0118,
+        "pvalue": 0.6046537758866204,
+        "se": 0.0228,
+        "ci_low": -0.0564,
+        "ci_high": 0.0328
+      },
+      {
+        "name": "C(relation)[T.nsubj]",
+        "display_name": "nsubj",
+        "coef": -0.0185,
+        "pvalue": 0.40078294253588265,
+        "se": 0.022,
+        "ci_low": -0.0616,
+        "ci_high": 0.0246
+      },
+      {
+        "name": "C(relation)[T.nmod]",
+        "display_name": "nmod",
+        "coef": -0.0189,
+        "pvalue": 0.3775108294678331,
+        "se": 0.0214,
+        "ci_low": -0.0608,
+        "ci_high": 0.023
+      },
+      {
+        "name": "C(relation)[T.advcl]",
+        "display_name": "advcl",
+        "coef": -0.0642,
+        "pvalue": 0.014403030699709087,
+        "se": 0.0262,
+        "ci_low": -0.1157,
+        "ci_high": -0.0128
+      },
+      {
+        "name": "C(relation)[T.conj]",
+        "display_name": "conj",
+        "coef": -0.066,
+        "pvalue": 0.005405101893733897,
+        "se": 0.0237,
+        "ci_low": -0.1125,
+        "ci_high": -0.0195
+      },
+      {
+        "name": "C(relation)[T.iobj]",
+        "display_name": "iobj",
+        "coef": -0.0728,
+        "pvalue": 0.03810092910757817,
+        "se": 0.0351,
+        "ci_low": -0.1416,
+        "ci_high": -0.004
+      },
+      {
+        "name": "C(relation)[T.obl]",
+        "display_name": "obl",
+        "coef": -0.0837,
+        "pvalue": 0.00010055667101183258,
+        "se": 0.0215,
+        "ci_low": -0.1259,
+        "ci_high": -0.0416
+      },
+      {
+        "name": "C(relation)[T.acl:relcl]",
+        "display_name": "acl:relcl",
+        "coef": -0.088,
+        "pvalue": 0.010349434785681138,
+        "se": 0.0343,
+        "ci_low": -0.1552,
+        "ci_high": -0.0207
+      },
+      {
+        "name": "C(relation)[T.nsubj:pass]",
+        "display_name": "nsubj:pass",
+        "coef": -0.1122,
+        "pvalue": 0.0560362390815572,
+        "se": 0.0587,
+        "ci_low": -0.2273,
+        "ci_high": 0.0029
+      },
+      {
+        "name": "C(relation)[T.ccomp]",
+        "display_name": "ccomp",
+        "coef": -0.1163,
+        "pvalue": 0.04764710728495957,
+        "se": 0.0587,
+        "ci_low": -0.2314,
+        "ci_high": -0.0012
+      }
+    ],
+    "r2_marginal": 0.2247,
+    "r2_conditional": 0.2234,
+    "n_obs": 16521
+  },
+  "model1_ja": {
+    "coefficients": [
+      {
+        "name": "C(relation)[T.nummod]",
+        "display_name": "nummod",
+        "coef": 0.7023,
+        "pvalue": 0.0,
+        "se": 0.0143,
+        "ci_low": 0.6741,
+        "ci_high": 0.7304
+      },
+      {
+        "name": "C(relation)[T.fixed]",
+        "display_name": "fixed",
+        "coef": 0.5595,
+        "pvalue": 0.0,
+        "se": 0.0105,
+        "ci_low": 0.539,
+        "ci_high": 0.58
+      },
+      {
+        "name": "C(relation)[T.det]",
+        "display_name": "det",
+        "coef": 0.4025,
+        "pvalue": 2.2972607900756523e-88,
+        "se": 0.0201,
+        "ci_low": 0.3631,
+        "ci_high": 0.4419
+      },
+      {
+        "name": "C(relation)[T.case]",
+        "display_name": "case",
+        "coef": 0.3428,
+        "pvalue": 0.0,
+        "se": 0.0083,
+        "ci_low": 0.3266,
+        "ci_high": 0.3591
+      },
+      {
+        "name": "C(relation)[T.cop]",
+        "display_name": "cop",
+        "coef": 0.2514,
+        "pvalue": 3.408045419435397e-61,
+        "se": 0.0152,
+        "ci_low": 0.2216,
+        "ci_high": 0.2811
+      },
+      {
+        "name": "Intercept",
+        "display_name": "Intercept",
+        "coef": 0.2471,
+        "pvalue": 3.807603802267137e-194,
+        "se": 0.0082,
+        "ci_low": 0.231,
+        "ci_high": 0.2632
+      },
+      {
+        "name": "C(relation)[T.compound]",
+        "display_name": "compound",
+        "coef": 0.1985,
+        "pvalue": 4.2017195262223115e-117,
+        "se": 0.0086,
+        "ci_low": 0.1817,
+        "ci_high": 0.2153
+      },
+      {
+        "name": "C(relation)[T.aux]",
+        "display_name": "aux",
+        "coef": 0.1475,
+        "pvalue": 1.650956009019272e-58,
+        "se": 0.0091,
+        "ci_low": 0.1296,
+        "ci_high": 0.1654
+      },
+      {
+        "name": "C(relation)[T.amod]",
+        "display_name": "amod",
+        "coef": 0.1462,
+        "pvalue": 4.896255939695032e-06,
+        "se": 0.032,
+        "ci_low": 0.0835,
+        "ci_high": 0.209
+      },
+      {
+        "name": "C(relation)[T.mark]",
+        "display_name": "mark",
+        "coef": 0.1356,
+        "pvalue": 5.450704918585194e-37,
+        "se": 0.0107,
+        "ci_low": 0.1148,
+        "ci_high": 0.1565
+      },
+      {
+        "name": "C(relation)[T.punct]",
+        "display_name": "punct",
+        "coef": 0.1222,
+        "pvalue": 1.986404328015007e-42,
+        "se": 0.0089,
+        "ci_low": 0.1047,
+        "ci_high": 0.1397
+      },
+      {
+        "name": "C(relation)[T.dep]",
+        "display_name": "dep",
+        "coef": 0.1083,
+        "pvalue": 0.28575800258146816,
+        "se": 0.1014,
+        "ci_low": -0.0905,
+        "ci_high": 0.3071
+      },
+      {
+        "name": "C(relation)[T.nmod]",
+        "display_name": "nmod",
+        "coef": 0.0247,
+        "pvalue": 0.010658961123224866,
+        "se": 0.0097,
+        "ci_low": 0.0057,
+        "ci_high": 0.0436
+      },
+      {
+        "name": "C(relation)[T.advmod]",
+        "display_name": "advmod",
+        "coef": 0.0091,
+        "pvalue": 0.5612344390849485,
+        "se": 0.0157,
+        "ci_low": -0.0216,
+        "ci_high": 0.0398
+      },
+      {
+        "name": "C(relation)[T.obj]",
+        "display_name": "obj",
+        "coef": 0.0073,
+        "pvalue": 0.5299119765286076,
+        "se": 0.0116,
+        "ci_low": -0.0155,
+        "ci_high": 0.0301
+      },
+      {
+        "name": "sent_length",
+        "display_name": "sent_length",
+        "coef": -0.0005,
+        "pvalue": 1.8121927185548578e-09,
+        "se": 0.0001,
+        "ci_low": -0.0007,
+        "ci_high": -0.0004
+      },
+      {
+        "name": "C(relation)[T.nsubj]",
+        "display_name": "nsubj",
+        "coef": -0.0375,
+        "pvalue": 0.00040254990809807063,
+        "se": 0.0106,
+        "ci_low": -0.0583,
+        "ci_high": -0.0167
+      },
+      {
+        "name": "C(relation)[T.iobj]",
+        "display_name": "iobj",
+        "coef": -0.0479,
+        "pvalue": 0.7143852419848193,
+        "se": 0.1308,
+        "ci_low": -0.3043,
+        "ci_high": 0.2085
+      },
+      {
+        "name": "C(relation)[T.obl]",
+        "display_name": "obl",
+        "coef": -0.0651,
+        "pvalue": 4.601107558938134e-12,
+        "se": 0.0094,
+        "ci_low": -0.0836,
+        "ci_high": -0.0467
+      },
+      {
+        "name": "C(relation)[T.csubj]",
+        "display_name": "csubj",
+        "coef": -0.0738,
+        "pvalue": 0.13972797572375162,
+        "se": 0.05,
+        "ci_low": -0.1717,
+        "ci_high": 0.0241
+      },
+      {
+        "name": "C(relation)[T.discourse]",
+        "display_name": "discourse",
+        "coef": -0.0739,
+        "pvalue": 0.6442370400841939,
+        "se": 0.1601,
+        "ci_low": -0.3878,
+        "ci_high": 0.2399
+      },
+      {
+        "name": "C(relation)[T.advcl]",
+        "display_name": "advcl",
+        "coef": -0.0963,
+        "pvalue": 1.7180149884113818e-18,
+        "se": 0.011,
+        "ci_low": -0.1178,
+        "ci_high": -0.0748
+      },
+      {
+        "name": "C(relation)[T.ccomp]",
+        "display_name": "ccomp",
+        "coef": -0.1175,
+        "pvalue": 0.001717455629867279,
+        "se": 0.0375,
+        "ci_low": -0.191,
+        "ci_high": -0.0441
+      },
+      {
+        "name": "C(relation)[T.cc]",
+        "display_name": "cc",
+        "coef": -0.1202,
+        "pvalue": 1.595122405509216e-06,
+        "se": 0.025,
+        "ci_low": -0.1693,
+        "ci_high": -0.0711
+      },
+      {
+        "name": "C(relation)[T.nsubj:outer]",
+        "display_name": "nsubj:outer",
+        "coef": -0.1262,
+        "pvalue": 0.00030473925762579423,
+        "se": 0.0349,
+        "ci_low": -0.1947,
+        "ci_high": -0.0577
+      },
+      {
+        "name": "C(relation)[T.csubj:outer]",
+        "display_name": "csubj:outer",
+        "coef": -0.1757,
+        "pvalue": 0.4375862694416952,
+        "se": 0.2263,
+        "ci_low": -0.6193,
+        "ci_high": 0.2679
+      }
+    ],
+    "r2_marginal": 0.3809,
+    "r2_conditional": 0.3802,
+    "n_obs": 22872
+  },
+  "model1_de": {
+    "coefficients": [
+      {
+        "name": "C(relation)[T.nummod]",
+        "display_name": "nummod",
+        "coef": 0.5344,
+        "pvalue": 3.700483317355826e-33,
+        "se": 0.0444,
+        "ci_low": 0.4474,
+        "ci_high": 0.6215
+      },
+      {
+        "name": "C(relation)[T.fixed]",
+        "display_name": "fixed",
+        "coef": 0.5095,
+        "pvalue": 5.42941625146019e-08,
+        "se": 0.0937,
+        "ci_low": 0.3259,
+        "ci_high": 0.6931
+      },
+      {
+        "name": "C(relation)[T.det]",
+        "display_name": "det",
+        "coef": 0.3272,
+        "pvalue": 5.053495865900236e-28,
+        "se": 0.0297,
+        "ci_low": 0.269,
+        "ci_high": 0.3855
+      },
+      {
+        "name": "C(relation)[T.compound:prt]",
+        "display_name": "compound:prt",
+        "coef": 0.3266,
+        "pvalue": 4.095274164743066e-11,
+        "se": 0.0494,
+        "ci_low": 0.2297,
+        "ci_high": 0.4234
+      },
+      {
+        "name": "Intercept",
+        "display_name": "Intercept",
+        "coef": 0.2964,
+        "pvalue": 1.3259020190806294e-23,
+        "se": 0.0295,
+        "ci_low": 0.2385,
+        "ci_high": 0.3543
+      },
+      {
+        "name": "C(relation)[T.det:poss]",
+        "display_name": "det:poss",
+        "coef": 0.2793,
+        "pvalue": 1.7257642700077192e-12,
+        "se": 0.0395,
+        "ci_low": 0.2018,
+        "ci_high": 0.3568
+      },
+      {
+        "name": "C(relation)[T.case]",
+        "display_name": "case",
+        "coef": 0.2628,
+        "pvalue": 4.6560154269202376e-18,
+        "se": 0.0303,
+        "ci_low": 0.2034,
+        "ci_high": 0.3222
+      },
+      {
+        "name": "C(relation)[T.flat]",
+        "display_name": "flat",
+        "coef": 0.2435,
+        "pvalue": 3.30537068274983e-08,
+        "se": 0.044,
+        "ci_low": 0.1571,
+        "ci_high": 0.3298
+      },
+      {
+        "name": "C(relation)[T.aux:pass]",
+        "display_name": "aux:pass",
+        "coef": 0.2408,
+        "pvalue": 4.599359878629058e-09,
+        "se": 0.041,
+        "ci_low": 0.1603,
+        "ci_high": 0.3212
+      },
+      {
+        "name": "C(relation)[T.expl:pv]",
+        "display_name": "expl:pv",
+        "coef": 0.2338,
+        "pvalue": 0.03413506340627604,
+        "se": 0.1103,
+        "ci_low": 0.0175,
+        "ci_high": 0.45
+      },
+      {
+        "name": "C(relation)[T.vocative]",
+        "display_name": "vocative",
+        "coef": 0.2098,
+        "pvalue": 0.4589885462369193,
+        "se": 0.2834,
+        "ci_low": -0.3456,
+        "ci_high": 0.7653
+      },
+      {
+        "name": "C(relation)[T.amod]",
+        "display_name": "amod",
+        "coef": 0.2077,
+        "pvalue": 3.028131735544533e-11,
+        "se": 0.0312,
+        "ci_low": 0.1465,
+        "ci_high": 0.2689
+      },
+      {
+        "name": "C(relation)[T.expl]",
+        "display_name": "expl",
+        "coef": 0.1913,
+        "pvalue": 0.006869471877985617,
+        "se": 0.0707,
+        "ci_low": 0.0526,
+        "ci_high": 0.33
+      },
+      {
+        "name": "C(relation)[T.advmod]",
+        "display_name": "advmod",
+        "coef": 0.1892,
+        "pvalue": 1.5262957960364352e-10,
+        "se": 0.0295,
+        "ci_low": 0.1313,
+        "ci_high": 0.2471
+      },
+      {
+        "name": "C(relation)[T.dep]",
+        "display_name": "dep",
+        "coef": 0.174,
+        "pvalue": 0.17830868900919514,
+        "se": 0.1293,
+        "ci_low": -0.0794,
+        "ci_high": 0.4274
+      },
+      {
+        "name": "C(relation)[T.compound]",
+        "display_name": "compound",
+        "coef": 0.1666,
+        "pvalue": 9.733634771228242e-05,
+        "se": 0.0427,
+        "ci_low": 0.0828,
+        "ci_high": 0.2504
+      },
+      {
+        "name": "C(relation)[T.aux]",
+        "display_name": "aux",
+        "coef": 0.1461,
+        "pvalue": 7.316332608158152e-06,
+        "se": 0.0326,
+        "ci_low": 0.0822,
+        "ci_high": 0.2099
+      },
+      {
+        "name": "C(relation)[T.cop]",
+        "display_name": "cop",
+        "coef": 0.1414,
+        "pvalue": 1.7437866130997804e-05,
+        "se": 0.0329,
+        "ci_low": 0.0769,
+        "ci_high": 0.2059
+      },
+      {
+        "name": "C(relation)[T.xcomp]",
+        "display_name": "xcomp",
+        "coef": 0.139,
+        "pvalue": 0.0004823243533685057,
+        "se": 0.0398,
+        "ci_low": 0.061,
+        "ci_high": 0.217
+      },
+      {
+        "name": "C(relation)[T.mark]",
+        "display_name": "mark",
+        "coef": 0.1295,
+        "pvalue": 0.00021867036556560076,
+        "se": 0.035,
+        "ci_low": 0.0609,
+        "ci_high": 0.1982
+      },
+      {
+        "name": "C(relation)[T.nsubj]",
+        "display_name": "nsubj",
+        "coef": 0.1122,
+        "pvalue": 0.00018687458580850635,
+        "se": 0.03,
+        "ci_low": 0.0534,
+        "ci_high": 0.1711
+      },
+      {
+        "name": "C(relation)[T.obj]",
+        "display_name": "obj",
+        "coef": 0.1066,
+        "pvalue": 0.0006696780587406705,
+        "se": 0.0313,
+        "ci_low": 0.0452,
+        "ci_high": 0.1679
+      },
+      {
+        "name": "C(relation)[T.cc]",
+        "display_name": "cc",
+        "coef": 0.0836,
+        "pvalue": 0.007991626921646995,
+        "se": 0.0315,
+        "ci_low": 0.0218,
+        "ci_high": 0.1453
+      },
+      {
+        "name": "C(relation)[T.obl:arg]",
+        "display_name": "obl:arg",
+        "coef": 0.0724,
+        "pvalue": 0.07469358621399155,
+        "se": 0.0406,
+        "ci_low": -0.0072,
+        "ci_high": 0.1519
+      },
+      {
+        "name": "C(relation)[T.punct]",
+        "display_name": "punct",
+        "coef": 0.0255,
+        "pvalue": 0.387968628414215,
+        "se": 0.0295,
+        "ci_low": -0.0324,
+        "ci_high": 0.0834
+      },
+      {
+        "name": "C(relation)[T.csubj]",
+        "display_name": "csubj",
+        "coef": 0.0213,
+        "pvalue": 0.798102083422576,
+        "se": 0.0833,
+        "ci_low": -0.142,
+        "ci_high": 0.1846
+      },
+      {
+        "name": "C(relation)[T.nsubj:pass]",
+        "display_name": "nsubj:pass",
+        "coef": 0.0069,
+        "pvalue": 0.8720421565827666,
+        "se": 0.0431,
+        "ci_low": -0.0775,
+        "ci_high": 0.0913
+      },
+      {
+        "name": "C(relation)[T.appos]",
+        "display_name": "appos",
+        "coef": -0.0006,
+        "pvalue": 0.9901534945165849,
+        "se": 0.0448,
+        "ci_low": -0.0884,
+        "ci_high": 0.0873
+      },
+      {
+        "name": "sent_length",
+        "display_name": "sent_length",
+        "coef": -0.0006,
+        "pvalue": 0.10548438130709678,
+        "se": 0.0004,
+        "ci_low": -0.0014,
+        "ci_high": 0.0001
+      },
+      {
+        "name": "C(relation)[T.nmod]",
+        "display_name": "nmod",
+        "coef": -0.0118,
+        "pvalue": 0.7120954640813799,
+        "se": 0.0319,
+        "ci_low": -0.0744,
+        "ci_high": 0.0508
+      },
+      {
+        "name": "C(relation)[T.obl]",
+        "display_name": "obl",
+        "coef": -0.0172,
+        "pvalue": 0.581638728255107,
+        "se": 0.0313,
+        "ci_low": -0.0786,
+        "ci_high": 0.0441
+      },
+      {
+        "name": "C(relation)[T.conj]",
+        "display_name": "conj",
+        "coef": -0.0522,
+        "pvalue": 0.09303186060273597,
+        "se": 0.0311,
+        "ci_low": -0.1132,
+        "ci_high": 0.0087
+      },
+      {
+        "name": "C(relation)[T.acl:relcl]",
+        "display_name": "acl:relcl",
+        "coef": -0.0666,
+        "pvalue": 0.6433220425724193,
+        "se": 0.1438,
+        "ci_low": -0.3486,
+        "ci_high": 0.2153
+      },
+      {
+        "name": "C(relation)[T.csubj:pass]",
+        "display_name": "csubj:pass",
+        "coef": -0.1268,
+        "pvalue": 0.6544936222865723,
+        "se": 0.2834,
+        "ci_low": -0.6822,
+        "ci_high": 0.4286
+      },
+      {
+        "name": "C(relation)[T.discourse]",
+        "display_name": "discourse",
+        "coef": -0.1382,
+        "pvalue": 0.33657879332159235,
+        "se": 0.1438,
+        "ci_low": -0.4202,
+        "ci_high": 0.1437
+      },
+      {
+        "name": "C(relation)[T.advcl]",
+        "display_name": "advcl",
+        "coef": -0.1401,
+        "pvalue": 0.0023693014129224353,
+        "se": 0.0461,
+        "ci_low": -0.2304,
+        "ci_high": -0.0498
+      },
+      {
+        "name": "C(relation)[T.parataxis]",
+        "display_name": "parataxis",
+        "coef": -0.1467,
+        "pvalue": 0.003662646704443676,
+        "se": 0.0505,
+        "ci_low": -0.2456,
+        "ci_high": -0.0478
+      },
+      {
+        "name": "C(relation)[T.ccomp]",
+        "display_name": "ccomp",
+        "coef": -0.1608,
+        "pvalue": 0.00037609642073586815,
+        "se": 0.0452,
+        "ci_low": -0.2494,
+        "ci_high": -0.0722
+      },
+      {
+        "name": "C(relation)[T.obl:agent]",
+        "display_name": "obl:agent",
+        "coef": -0.1696,
+        "pvalue": 0.23828466052431946,
+        "se": 0.1438,
+        "ci_low": -0.4516,
+        "ci_high": 0.1123
+      }
+    ],
+    "r2_marginal": 0.1583,
+    "r2_conditional": 0.1554,
+    "n_obs": 11118
+  }
 }
