@@ -8,6 +8,7 @@ initializes the BERT models via the lifespan generator, and serves both the
 REST API endpoints as well as the static frontend HTML.
 """
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -94,31 +95,28 @@ def analyze(req: AnalyzeRequest):
     }
 
 @app.get("/api/specialists")
-def get_specialists():
+async def get_specialists():
     path = os.path.join(os.path.dirname(__file__), "specialist_data.json")
     if not os.path.exists(path):
         raise HTTPException(status_code=404, detail="Specialist data not computed yet.")
-    with open(path, "r") as f:
-        return json.load(f)
+    return FileResponse(path, media_type="application/json")
 
 @app.get("/api/evaluation")
-def get_evaluation():
+async def get_evaluation():
     path = os.path.join(os.path.dirname(__file__), "test_results.json")
     if not os.path.exists(path):
         raise HTTPException(status_code=404, detail="Evaluation results not computed yet. Run run_evaluation.py first.")
-    with open(path) as f:
-        return json.load(f)
+    return FileResponse(path, media_type="application/json")
 
 @app.get("/api/lmm_evaluation")
-def get_lmm_evaluation():
+async def get_lmm_evaluation():
     path = os.path.join(os.path.dirname(__file__), "lmm_results.json")
     if not os.path.exists(path):
         raise HTTPException(status_code=404, detail="LMM results not computed yet. Run run_lmm_analysis.py first.")
-    with open(path) as f:
-        return json.load(f)
+    return FileResponse(path, media_type="application/json")
 
 @app.get("/api/specialists/{lang}")
-def get_specialists_lang(lang: str):
+async def get_specialists_lang(lang: str):
     valid = {"en", "hi", "ja", "de", "all"}
     if lang not in valid:
         raise HTTPException(status_code=400, detail=f"Unknown language '{lang}'.")
@@ -126,16 +124,14 @@ def get_specialists_lang(lang: str):
     path = os.path.join(os.path.dirname(__file__), filename)
     if not os.path.exists(path):
         raise HTTPException(status_code=404, detail=f"No specialist data for '{lang}'.")
-    with open(path) as f:
-        return json.load(f)
+    return FileResponse(path, media_type="application/json")
 
 @app.get("/api/heatmaps")
-def get_heatmaps():
+async def get_heatmaps():
     path = os.path.join(os.path.dirname(__file__), "data", "relation_heatmaps.json")
     if not os.path.exists(path):
         raise HTTPException(status_code=404, detail="Heatmaps not computed yet. Run generate_heatmaps.py first.")
-    with open(path) as f:
-        return json.load(f)
+    return FileResponse(path, media_type="application/json")
 
 # Serve backend graphs (must be mounted BEFORE the root "/" catch-all)
 graphs_dir = os.path.join(os.path.dirname(__file__), "graphs")
