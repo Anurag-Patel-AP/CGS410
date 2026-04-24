@@ -15,7 +15,7 @@
     };
     const LANGS = ['en', 'hi', 'ja', 'de'];
 
-    fetch('/api/evaluation')
+    fetch('/api/evaluation?v=2', { cache: 'no-store' })
         .then(r => { if (!r.ok) throw new Error(); return r.json(); })
         .then(data => {
             renderAvgUAS(data.avgData);
