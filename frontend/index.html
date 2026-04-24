@@ -176,47 +176,6 @@
             </div>
         </section>
 
-        <!-- Relation-Wise Attention Heatmaps -->
-        <section id="heatmaps" class="research-section glass-panel" style="margin-top:2rem;">
-            <div class="research-content">
-                <h2>Language-Wise Relation Attention Heatmaps</h2>
-                <div style="background:rgba(255,255,255,0.03); padding:1.2rem; border-left:4px solid #a78bfa; border-radius:4px; margin-bottom:1.5rem; line-height:1.6;">
-                    <p style="margin-top:0;"><strong>Why are specific heads called "Specialists"?</strong> To prove this visually, we can average the raw attention matrices across up to 2,500 sentences for a specific language and grammatical relation. The resulting 12&times;12 heatmap shows how the 144 attention heads distribute their focus when that relation occurs.</p>
-                    <p style="margin-bottom:0;">The cell corresponding to the designated specialist head is highlighted with a <strong>golden border</strong>. You can visually confirm that it consistently aligns with the highest average attention values, providing structural proof of specialisation.</p>
-                </div>
-
-                <div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:center; margin-bottom:1.5rem;">
-                    <div style="display:flex; flex-direction:column; min-width:180px;">
-                        <label for="heatmapLangSelect" style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:0.3rem;">Language</label>
-                        <select id="heatmapLangSelect" style="padding:0.6rem; border-radius:4px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); color:white; outline:none; font-family:inherit;">
-                            <option value="en" selected>English</option>
-                            <option value="hi">Hindi</option>
-                            <option value="ja">Japanese</option>
-                            <option value="de">German</option>
-                        </select>
-                    </div>
-                    <div style="display:flex; flex-direction:column; min-width:180px;">
-                        <label for="heatmapRelSelect" style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:0.3rem;">Relation (Dependency Type)</label>
-                        <select id="heatmapRelSelect" style="padding:0.6rem; border-radius:4px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); color:white; outline:none; font-family:inherit;">
-                            <!-- Populated dynamically -->
-                            <option value="">Loading...</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div id="heatmapDataMissing" style="display:none; text-align:center; padding:2rem; color:rgba(255,255,255,0.5);">
-                    No heatmap data available for this selection.
-                </div>
-
-                <div id="heatmapContainerWrapper" style="display:none; max-width:650px; margin:0 auto;">
-                    <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; padding:0 1rem;">
-                        <div style="color:rgba(255,255,255,0.8); font-size:0.9rem;">Dataset Sample: <span id="heatmapCount" style="font-weight:bold; color:var(--accent);">0</span> sentences</div>
-                        <div style="color:rgba(255,255,255,0.8); font-size:0.9rem;">Specialist Head: <span id="heatmapSpecialist" style="font-weight:bold; color:#fbbf24;">L? H?</span></div>
-                    </div>
-                    <div id="heatmapChart" style="width:100%; position:relative;"></div>
-                </div>
-            </div>
-        </section>
 
         <!-- Research Findings -->
         <section id="research" class="research-section glass-panel">
@@ -274,6 +233,44 @@
                             <tr><td colspan="3" style="text-align:center; color:rgba(255,255,255,0.3); padding:1.5rem;">Loading common heads...</td></tr>
                         </tbody>
                     </table>
+                </div>
+
+                <!-- Relation-Wise Attention Heatmaps -->
+                <h3 id="heatmaps" style="margin-top:3.5rem;">Language-Wise Relation Attention Heatmaps</h3>
+                <div style="background:rgba(255,255,255,0.03); padding:1.2rem; border-left:4px solid #a78bfa; border-radius:4px; margin-bottom:1.5rem; line-height:1.6;">
+                    <p style="margin-top:0;"><strong>Why are specific heads called "Specialists"?</strong> To prove this visually, we can average the raw attention matrices across up to 2,500 sentences for a specific language and grammatical relation. The resulting 12&times;12 heatmap shows how the 144 attention heads distribute their focus when that relation occurs.</p>
+                    <p style="margin-bottom:0;">The cell corresponding to the designated specialist head is highlighted with a <strong>golden border</strong>. You can visually confirm that it consistently aligns with the highest average attention values, providing structural proof of specialisation.</p>
+                </div>
+
+                <div style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:center; margin-bottom:1.5rem;">
+                    <div style="display:flex; flex-direction:column; min-width:180px;">
+                        <label for="heatmapLangSelect" style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:0.3rem;">Language</label>
+                        <select id="heatmapLangSelect" style="padding:0.6rem; border-radius:4px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); color:white; outline:none; font-family:inherit;">
+                            <option value="en" selected>English</option>
+                            <option value="hi">Hindi</option>
+                            <option value="ja">Japanese</option>
+                            <option value="de">German</option>
+                        </select>
+                    </div>
+                    <div style="display:flex; flex-direction:column; min-width:180px;">
+                        <label for="heatmapRelSelect" style="color:rgba(255,255,255,0.7); font-size:0.85rem; margin-bottom:0.3rem;">Relation (Dependency Type)</label>
+                        <select id="heatmapRelSelect" style="padding:0.6rem; border-radius:4px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); color:white; outline:none; font-family:inherit;">
+                            <!-- Populated dynamically -->
+                            <option value="">Loading...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="heatmapDataMissing" style="display:none; text-align:center; padding:2rem; color:rgba(255,255,255,0.5);">
+                    No heatmap data available for this selection.
+                </div>
+
+                <div id="heatmapContainerWrapper" style="display:none; max-width:650px; margin:0 auto; margin-bottom:2rem;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; padding:0 1rem;">
+                        <div style="color:rgba(255,255,255,0.8); font-size:0.9rem;">Dataset Sample: <span id="heatmapCount" style="font-weight:bold; color:var(--accent);">0</span> sentences</div>
+                        <div style="color:rgba(255,255,255,0.8); font-size:0.9rem;">Specialist Head: <span id="heatmapSpecialist" style="font-weight:bold; color:#fbbf24;">L? H?</span></div>
+                    </div>
+                    <div id="heatmapChart" style="width:100%; position:relative;"></div>
                 </div>
 
                 <!-- Chart: Average UAS per Language -->
