@@ -11,6 +11,11 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
         /* Specialist DataFrame Table */
         .specialist-table-wrap { overflow-x: auto; margin-top: 1.5rem; }
         .specialist-table {
@@ -276,11 +281,19 @@
                 <!-- Chart: Average UAS per Language -->
                 <h3 id="uas-bar-chart" style="margin-top:3.5rem;">Model &mdash; Average UAS by Language (Held-Out Test Set)</h3>
                 <p style="color:rgba(255,255,255,0.8); line-height:1.5;">Each language's specialist heads were discovered <em>only</em> from the 70% training split. This bar chart shows the <strong>Unlabeled Attachment Score (UAS)</strong> on the entirely unseen 30% test split &mdash; the fraction of words whose predicted syntactic parent token is correct. A random baseline would score 1/(sentence length), so any positive UAS confirms genuine grammatical signal in attention.</p>
-                <div id="avgUasChart" style="margin-top:1rem;"></div>
+                <div id="avgUasChart" style="margin-top:1rem;">
+                    <div style="text-align:center; padding:2.5rem; color:rgba(255,255,255,0.4); font-style:italic; border:1px dashed rgba(255,255,255,0.1); border-radius:6px;">
+                        <span style="display:inline-block; animation: pulse 1.5s infinite;">⏳ Loading analysis...</span>
+                    </div>
+                </div>
 
                 <h3 id="uas-line-chart" style="margin-top:3.5rem;">UAS vs Sentence Length &mdash; Language Comparison</h3>
                 <p style="color:rgba(255,255,255,0.8); line-height:1.5;">As sentences grow longer, the number of candidate parent tokens grows linearly, so random-chance UAS drops (&sim;1/n). The solid coloured lines show the model's empirical UAS at each sentence length. <strong>A line falling slower than the grey dashed baseline</strong> (random chance) confirms the model is extracting genuine structure rather than defaulting to proximity or frequency heuristics.</p>
-                <div id="lengthUasChart" style="margin-top:1rem;"></div>
+                <div id="lengthUasChart" style="margin-top:1rem;">
+                    <div style="text-align:center; padding:2.5rem; color:rgba(255,255,255,0.4); font-style:italic; border:1px dashed rgba(255,255,255,0.1); border-radius:6px;">
+                        <span style="display:inline-block; animation: pulse 1.5s infinite;">⏳ Loading analysis...</span>
+                    </div>
+                </div>
 
                 <!-- LMM: proposal formula explanation -->
                 <h3 style="margin-top:3.5rem;">Statistical Validation &mdash; Linear Mixed Model</h3>
@@ -322,7 +335,11 @@
                     </div>
                     <p id="lmmChartSubtitle" style="color:rgba(255,255,255,0.4); font-size:0.78rem; text-align:center; margin:0 0 0.8rem 0;">Global model &mdash; all 4 languages pooled, with (1|Language) random intercept</p>
                     <div id="lmmContainer" style="width:100%; max-height:560px; overflow-y:auto; overflow-x:hidden; border-radius:6px;">
-                        <div id="lmmChart"></div>
+                        <div id="lmmChart">
+                            <div style="text-align:center; padding:3rem; color:rgba(255,255,255,0.4); font-style:italic; border:1px dashed rgba(255,255,255,0.1); border-radius:6px;">
+                                <span style="display:inline-block; animation: pulse 1.5s infinite;">⏳ Loading analysis...</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -338,7 +355,11 @@
                 </div>
                 <div class="glass-panel" style="padding:1.5rem;">
                     <h4 id="lmm-random-intercepts" style="margin-top:0; text-align:center;">Per-Language Random Intercepts &mdash; (1|Language) from LMM</h4>
-                    <div id="lmmRandomEffectsChart" style="width:100%; min-height:200px;"></div>
+                    <div id="lmmRandomEffectsChart" style="width:100%; min-height:200px;">
+                        <div style="text-align:center; padding:3rem; color:rgba(255,255,255,0.4); font-style:italic; border:1px dashed rgba(255,255,255,0.1); border-radius:6px;">
+                            <span style="display:inline-block; animation: pulse 1.5s infinite;">⏳ Loading analysis...</span>
+                        </div>
+                    </div>
                 </div>
 
 
