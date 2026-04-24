@@ -18,9 +18,8 @@
     fetch('/api/evaluation')
         .then(r => { if (!r.ok) throw new Error(); return r.json(); })
         .then(data => {
-            const valid = data.filter(d => d.uas !== null && d.uas !== undefined);
-            renderAvgUAS(valid);
-            renderUASvsLength(valid);
+            renderAvgUAS(data.avgData);
+            renderUASvsLength(data.lengthData);
         })
         .catch(() => {
             ['avgUasChart', 'lengthUasChart'].forEach(id => {
@@ -30,17 +29,13 @@
         });
 
     // ── Chart 1: Average UAS per Language ──────────────────────────────────
-    function renderAvgUAS(data) {
+    function renderAvgUAS(avgData) {
         const container = document.getElementById('avgUasChart');
         if (!container) return;
         container.innerHTML = '';
-
-        // Compute averages
-        const avgData = LANGS.map(lang => {
-            const vals = data.filter(d => d.language === lang).map(d => d.uas);
-            const avg = vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : 0;
-            return { lang, name: LANG_LABELS[lang], avg: parseFloat(avg.toFixed(2)), n: vals.length };
-        });
+        
+        // Add names
+        avgData.forEach(d => { d.name = LANG_LABELS[d.lang]; });
 
         const margin = { top: 30, right: 30, bottom: 60, left: 65 };
         const width  = Math.max(container.clientWidth || 500, 480);
@@ -118,8 +113,7 @@
             .text('Average UAS (%)');
     }
 
-    // ── Chart 2: UAS vs Sentence Length (scatter + smoothed line) ──────────
-    function renderUASvsLength(data) {
+    function renderUASvsLength(lengthData) {
         const container = document.getElementById('lengthUasChart');
         if (!container) return;
         container.innerHTML = '';
@@ -130,8 +124,19 @@
         const innerW = width - margin.left - margin.right;
         const innerH = height - margin.top - margin.bottom;
 
-        const maxLen = Math.max(2, Math.min(d3.max(data, d => d.length) || 30, 60));
-        const minLen = Math.max(1, d3.min(data, d => d.length) || 1);
+        // Find max length across all languages in lengthData
+        let absoluteMaxLen = 30;
+        LANGS.forEach(lang => {
+            if (lengthData[lang] && lengthData[lang].length > 0) {
+                const langMax = lengthData[lang][lengthData[lang].length - 1].len;
+                if (langMax > absoluteMaxLen) absoluteMaxLen = langMax;
+            }
+        });
+        
+        let absoluteMinLen = 1;
+
+        const maxLen = Math.max(2, Math.min(absoluteMaxLen, 60));
+        const minLen = Math.max(1, absoluteMinLen);
 
         const xScale = d3.scaleLinear().domain([minLen, maxLen]).range([0, innerW]).clamp(true);
         const yScale = d3.scaleLinear().domain([0, 105]).range([innerH, 0]);
@@ -150,25 +155,9 @@
             .attr('stroke', 'rgba(255,255,255,0.06)').attr('stroke-width', 1);
 
         LANGS.forEach(lang => {
-            const langData = data.filter(d => d.language === lang && d.length <= maxLen)
-                                  .sort((a, b) => a.length - b.length);
+            const exactData = lengthData[lang] || [];
             const color = LANG_COLORS[lang];
 
-            // Scatter dots removed for cleaner graph
-
-            // Exact lengths with a rolling window (smoothing) to start precisely at the shortest length
-            const exactAvgs = {};
-            langData.forEach(d => {
-                const len = d.length;
-                if (!exactAvgs[len]) exactAvgs[len] = { sum: 0, count: 0 };
-                exactAvgs[len].sum += d.uas;
-                exactAvgs[len].count++;
-            });
-            
-            const exactData = Object.entries(exactAvgs)
-                .map(([len, item]) => ({ len: +len, avg: item.sum / item.count }))
-                .sort((a, b) => a.len - b.len);
-                
             const lineData = exactData.filter(d => d.len <= maxLen);
 
             if (lineData.length > 1) {

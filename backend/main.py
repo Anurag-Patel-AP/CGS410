@@ -65,7 +65,9 @@ def get_sentences(lang: str):
     sentences = data_manager.get_test_sentences(lang)
     if not sentences:
         raise HTTPException(status_code=404, detail="Language not found or no held-out sentences available")
-    return [{"id": s["id"], "text": " ".join(s["tokens"])} for s in sentences]
+    # Limit dropdown population to 150 sentences max to prevent browser freeze
+    max_sentences = sentences[:150]
+    return [{"id": s["id"], "text": " ".join(s["tokens"])} for s in max_sentences]
 
 @app.post("/api/analyze")
 def analyze(req: AnalyzeRequest):
@@ -103,7 +105,7 @@ async def get_specialists():
 
 @app.get("/api/evaluation")
 async def get_evaluation():
-    path = os.path.join(os.path.dirname(__file__), "test_results.json")
+    path = os.path.join(os.path.dirname(__file__), "evaluation_summary.json")
     if not os.path.exists(path):
         raise HTTPException(status_code=404, detail="Evaluation results not computed yet. Run run_evaluation.py first.")
     return FileResponse(path, media_type="application/json")
